@@ -18,9 +18,14 @@ html {
 }
 
 body {
-    background: #050505;
     color: #ffffff;
     line-height: 1.6;
+    background-color:#050505;
+    background-image:
+        linear-gradient(rgba(31,64,104,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31,64,104,.12) 1px, transparent 1px);
+
+    background-size:45px 45px;
 }
 
 /* ===========================
@@ -38,18 +43,24 @@ header {
     border-bottom: 1px solid rgba(31,64,104,0.2);
 }
 
-.navbar {
-    width: 90%;
-    max-width: 1300px;
-    margin: auto;
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding:18px 40px;
 
-    padding: 18px 0;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.35);
 }
-
 .logo-container {
     display: flex;
     align-items: center;
@@ -135,13 +146,19 @@ p {
    HERO
 =========================== */
 .hero {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 120px 20px 80px;
+    background:
+        linear-gradient(rgba(5,5,5,.75), rgba(5,5,5,.75)),
+        linear-gradient(135deg,#1F4068,#0B1628);
+
+    min-height:90vh;
+    border-radius:0 0 40px 40px;
 }
+
 
 .hero-content {
     max-width: 800px;
@@ -338,26 +355,27 @@ footer {
     color: #bdbdbd;
 }
 
-/* ===========================
-   SCROLLBAR
-=========================== */
-::-webkit-scrollbar {
-    width: 10px;
+/* Scrollbar */
+::-webkit-scrollbar{
+    width:12px;
 }
 
-::-webkit-scrollbar-track {
-    background: #050505;
+/* Track */
+::-webkit-scrollbar-track{
+    background:#050505;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #1F4068;
-    border-radius: 10px;
+/* Thumb */
+::-webkit-scrollbar-thumb{
+    background:#1F4068;
+    border-radius:10px;
+    border:3px solid #050505;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #2f6fb0;
+/* Hover */
+::-webkit-scrollbar-thumb:hover{
+    background:#2C5B94;
 }
-
 /* ===========================
    RESPONSIVE
 =========================== */
@@ -655,4 +673,104 @@ main h1, main h2 {
     text-shadow:
         0 0 3px rgba(255,255,255,0.35),
         0 0 8px rgba(255,255,255,0.15) !important;
+}
+.badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:6px 14px;
+
+    background:rgba(31,64,104,.2);
+    color:#ffffff;
+
+    border:1px solid #1F4068;
+    border-radius:999px;
+
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+.fb-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    margin-top:18px;
+    padding:12px 20px;
+
+    background:#1F4068;
+    color:#fff;
+
+    text-decoration:none;
+    font-weight:600;
+    font-size:.95rem;
+
+    border-radius:12px;
+    border:2px solid #1F4068;
+
+    transition:.3s ease;
+}
+
+.fb-btn i{
+    font-size:1.2rem;
+}
+
+.fb-btn:hover{
+    background:transparent;
+    color:#1F4068;
+    box-shadow:0 0 15px rgba(31,64,104,.4);
+    transform:translateY(-2px);
+}
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0;
+}
+
+.skills span{
+    background:rgba(31,64,104,.2);
+    border:1px solid #1F4068;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:.8rem;
+}
+
+.dept-head{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin:20px 0;
+
+    padding:15px;
+
+    background:rgba(31,64,104,.12);
+    border:1px solid rgba(31,64,104,.35);
+    border-radius:12px;
+}
+
+.head-photo{
+    width:65px;
+    height:65px;
+
+    object-fit:cover;
+    border-radius:50%;
+
+    border:3px solid #1F4068;
+}
+
+.head-title{
+    display:block;
+    font-size:.8rem;
+    color:#9fb8d8;
+    margin-bottom:4px;
+}
+
+.head-info h3{
+    margin:0;
+    color:#fff;
+    font-size:1rem;
 }
