@@ -1,0 +1,658 @@
+/* ===========================
+   FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ===========================
+   HEADER / NAVBAR
+=========================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(31,64,104,0.2);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.15);
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 0 10px #1F4068, 0 0 20px #1F4068;
+    transform: scale(1.05);
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #1F4068;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    transform: scale(1.08);
+}
+
+/* ===========================
+   GLOBAL SECTION FIX
+=========================== */
+section {
+    padding: 100px 10%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+p {
+    color: #cfcfcf;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #1F4068, 0 0 35px #1F4068;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 40px;
+    border: 2px solid #1F4068;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #1F4068;
+    box-shadow: 0 0 20px #1F4068;
+    transform: translateY(-4px);
+}
+
+/* ===========================
+   CARDS (HOME)
+=========================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(31,64,104,0.2);
+    padding: 30px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(31,64,104,0.4);
+}
+
+/* CENTER SECTIONS */
+.welcome,
+.quick-links {
+    text-align: center;
+}
+.quick-links h2 {
+    margin: 60px 0 30px;
+    text-align: center;
+}
+/* ===========================
+   ABOUT
+=========================== */
+.about {
+    max-width: 900px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* ===========================
+   DEPARTMENTS (2x2 GRID FIXED)
+=========================== */
+.departments {
+    max-width: 1100px;
+    margin: 120px auto;
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.department-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(31,64,104,0.2);
+    padding: 30px;
+    border-radius: 18px;
+    transition: 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(31,64,104,0.4);
+}
+
+/* ICON + TITLE SIDE BY SIDE */
+.dept-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.department-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* ===========================
+   OFFICERS (BIG CARDS FIXED)
+=========================== */
+.officers {
+    max-width: 900px;
+    margin: 120px auto;
+}
+
+.officer-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(31,64,104,0.2);
+    border-radius: 18px;
+
+    padding: 20px;
+    margin-bottom: 15px;
+
+    transition: 0.3s ease;
+}
+
+.officer-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(31,64,104,0.4);
+}
+
+.officer-box img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+.gallery {
+    max-width: 1100px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(31,64,104,0.4);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(31,64,104,0.2);
+    color: #bdbdbd;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1F4068;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2f6fb0;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .departments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .officer-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}   
+/* ===========================
+   IMAGE SIZE CONTROL 
+=========================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Logo images */
+.logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.15);
+}
+
+/* Officer images */
+.officer-box img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Department icons */
+.department-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Gallery images */
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ABOUT / GENERAL PAGE IMAGES  */
+.about img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+/* ===========================
+   CARD SYSTEM 
+=========================== */
+
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(31,64,104,0.2);
+    border-radius: 18px;
+    padding: 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(31,64,104,0.4);
+}
+
+.card-center {
+    display: flex;
+    justify-content: center;
+}
+
+.group-feature {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.group-feature img {
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+
+.creator-feature {
+    display: flex;
+    align-items: center;
+     justify-content: center;  
+    gap: 20px;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 70px auto 40px;
+    padding: 30px 40px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(31,64,104,0.2);
+    border-radius: 18px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.creator-feature:hover {
+    transform: translateY(-8px);
+    border-color: #1F4068;
+
+    box-shadow:
+        0 0 20px rgba(31,64,104,0.35),
+        0 0 45px rgba(31,64,104,0.2);
+}
+
+.rylogo {
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
+    display: block;
+
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #1F4068;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rylogo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(31,64,104,0.6);
+}
+.creator-info {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.creator-info h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.creator-info p {
+    color: #bdbdbd;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: justify;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.85);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popup {
+    position: relative;
+
+    background: #111;
+    color: white;
+
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 140, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox:target .popup {
+    transform: scale(1);
+}
+
+.exit-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.exit-btn:hover {
+    color: #00aaff;
+    transform: scale(1.2);
+}
+
+.close {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+main h1, main h2 {
+    color: white;
+    text-align: center;
+      text-shadow: 0 0 15px #1F4068, 0 0 35px #1F4068;
+}
+.subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-top: 10px;
+}
+.department-card h1,
+.department-card h2,
+.department-card h3,
+.department-card h4,
+
+.officer-card h1,
+.officer-card h2,
+.officer-card h3,
+.officer-card h4,
+
+.gallery h2,
+.gallery h3 {
+    color: white !important;
+    text-shadow:
+        0 0 3px rgba(255,255,255,0.35),
+        0 0 8px rgba(255,255,255,0.15) !important;
+}
